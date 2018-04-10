@@ -1,14 +1,14 @@
 {
   "name": "react-animate-x",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "keywords": [
     "react",
-	"animate",
-	"tween",
-	"number",
-	"object",
-	"array",
-	"component"
+    "animate",
+    "tween",
+    "number",
+    "object",
+    "array",
+    "component"
   ],
   "main": "dist/index.js",
   "author": "Kennedy Rose <krose@escaladesports.com>",
