@@ -15,14 +15,19 @@ class ReactAnimate extends React.Component {
 			this.anim.stop()
 		}
 		this.anim = new Animate({
-			...props,
-			onStep: current => {
-				this.setState({ current })
-			}
-		}).start()
+				...props,
+				onStep: current => {
+					this.setState({ current })
+				}
+			}).start()
 	}
 	componentDidMount(){
 		this.start(this.props)
+	}
+	componentWillUnmount(){
+		if(this.anim){
+			this.anim.stop()
+		}
 	}
 	componentWillReceiveProps(newProps){
 		if(!equal(this.props, newProps)){

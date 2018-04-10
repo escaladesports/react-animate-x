@@ -23,6 +23,7 @@
     "travis": "opn https://travis-ci.org/escaladesports/react-animate-x/branches"
   },
   "devDependencies": {
+    "eases": "^1.0.8",
     "esca-scripts": "^0.14.7",
     "opn-cli": "^3.1.0",
     "react": "^16.1.1",

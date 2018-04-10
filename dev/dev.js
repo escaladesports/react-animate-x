@@ -1,6 +1,8 @@
 import React from 'react'
 import { render } from 'react-dom'
+
 import Animate from '../src/index'
+import { bounceOut } from 'eases'
 
 const containerEl = document.createElement('div')
 document.body.appendChild(containerEl)
@@ -11,22 +13,23 @@ class Template extends React.Component{
 		this.state = {
 			from: 0,
 			to: 100,
+			id: 0,
 		}
 	}
 	componentDidMount(){
 		setTimeout(() => {
 			this.setState({
-				from: 0,
-				to: 200,
+				id: this.state.id
 			})
 		}, 600)
 	}
 	render(){
 		return (
-			<Animate {...this.state}>
+			<Animate {...this.state} easing={bounceOut}>
 				{x => (
 					<div style={{
-						transform: `translateX(${x}px)`
+						transform: `translateX(${x}px)`,
+						display: `inline-block`,
 					}}>X</div>
 				)}
 			</Animate>

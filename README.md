@@ -1,18 +1,72 @@
-# React Component Boilerplate
+# React Animate X
 
-A simple React boilerplate that outputs to ES5 and ES6.
+A React implimentation of [Animate X](https://github.com/escaladesports/animate-x),
+a super small animation library for animating components, numbers, objects, and arrays.
 
-## Getting started
+## Installation
+
+With npm:
 
 ```bash
-git clone git@github.com:escaladesports/react-component-boilerplate.git --depth=1 your-component
-cd your-component
-rm -rf .git
+npm install --save react-animate-x
 ```
 
-Also make sure to edit the `package.json` file with a new name, version number, author, and anything else you might need.
+Or with Yarn:
+
+```bash
+yarn add react-animate-x
+```
 
 ## Usage
 
-- `yarn dev`: Runs a local dev server from the `dev` directory
-- `yarn analyze`: View bundle sizes
+### Simple
+
+```jsx
+import Animate from 'react-animate-x'
+
+...
+
+<Animate from={0}, to={100}>
+   {state => (
+      <div style={{ transform: `translateX(${state}px)` }}>Animating!</div>
+   )}
+</Animate>
+```
+
+
+### Easing
+
+The simplest way to apply easing to your animation is with the [eases](https://www.npmjs.com/package/eases) module, but any easing function will work.
+
+```jsx
+import Animate from 'react-animate-x'
+import { bounceOut } from 'eases'
+
+...
+
+<Animate
+   from={{
+      x: 0,
+      y: 0,
+   }}
+   to={{
+      x: 100,
+      y: 150,
+   }}
+   easing={bounceOut}>
+   {({ x, y }) => (
+      <div style={{ transform: `translate(${x}px, ${y}px)` }}>Animating!</div>
+   )}
+</Animate>
+```
+
+## Props
+
+Prop | Description | Default
+--- | --- | ---
+from | A number, object, or array to start tweening from | `0`
+to | A number, object, or array to tween to (must match schema of "from") | `100`
+duration | The number of milliseconds the animation should last | `1000`
+easing | An easing function for the animation | `function(time){ return time }`
+onStart | A function that will be called every time the animation starts | n/a
+onEnd | A function that will be called every time the animation ends | n/a
