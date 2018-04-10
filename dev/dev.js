@@ -1,15 +1,37 @@
 import React from 'react'
 import { render } from 'react-dom'
-import Img from '../src/index'
+import Animate from '../src/index'
 
 const containerEl = document.createElement('div')
 document.body.appendChild(containerEl)
 
-render(
-	<Img
-		src='http://via.placeholder.com/500x1000'
-		width={500}
-		height={1000}
-	/>,
-	containerEl
-)
+class Template extends React.Component{
+	constructor(props){
+		super(props)
+		this.state = {
+			from: 0,
+			to: 100,
+		}
+	}
+	componentDidMount(){
+		setTimeout(() => {
+			this.setState({
+				from: 0,
+				to: 200,
+			})
+		}, 600)
+	}
+	render(){
+		return (
+			<Animate {...this.state}>
+				{x => (
+					<div style={{
+						transform: `translateX(${x}px)`
+					}}>X</div>
+				)}
+			</Animate>
+		)
+	}
+}
+
+render(<Template />, containerEl)

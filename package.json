@@ -28,5 +28,8 @@
     "react": "^16.1.1",
     "react-dom": "^16.1.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "animate-x": "^1.0.1",
+    "fast-deep-equal": "^1.1.0"
+  }
 }
