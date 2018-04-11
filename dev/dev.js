@@ -11,8 +11,8 @@ class Template extends React.Component{
 	constructor(props){
 		super(props)
 		this.state = {
-			from: 0,
-			to: 100,
+			from: 100,
+			to: 0,
 			id: 0,
 		}
 	}
@@ -26,12 +26,15 @@ class Template extends React.Component{
 	render(){
 		return (
 			<Animate {...this.state} easing={bounceOut}>
-				{x => (
-					<div style={{
-						transform: `translateX(${x}px)`,
-						display: `inline-block`,
-					}}>X</div>
-				)}
+				{x => {
+					console.log(x)
+					return (
+						<div style={{
+							transform: `translateX(${x}px)`,
+							display: `inline-block`,
+						}}>X</div>
+					)
+				}}
 			</Animate>
 		)
 	}
