@@ -14,6 +14,7 @@ class ReactAnimate extends React.Component {
 		if(this.anim){
 			this.anim.stop()
 		}
+		if(props.stop) return
 		this.anim = new Animate({
 				...props,
 				onStep: current => {

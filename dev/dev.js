@@ -19,7 +19,7 @@ class Template extends React.Component{
 	componentDidMount(){
 		setTimeout(() => {
 			this.setState({
-				id: this.state.id
+				stop: true
 			})
 		}, 600)
 	}
