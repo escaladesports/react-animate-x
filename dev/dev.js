@@ -14,12 +14,13 @@ class Template extends React.Component{
 			from: 100,
 			to: 0,
 			id: 0,
+			animating: true,
 		}
 	}
 	componentDidMount(){
 		setTimeout(() => {
 			this.setState({
-				stop: true
+				animating: false
 			})
 		}, 600)
 	}

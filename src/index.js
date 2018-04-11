@@ -14,7 +14,7 @@ class ReactAnimate extends React.Component {
 		if(this.anim){
 			this.anim.stop()
 		}
-		if(props.stop) return
+		if(props.animating === false) return
 		this.anim = new Animate({
 				...props,
 				onStep: current => {
@@ -26,7 +26,7 @@ class ReactAnimate extends React.Component {
 		this.start(this.props)
 	}
 	componentWillUnmount(){
-		if(this.anim){
+		if (this.anim) {
 			this.anim.stop()
 		}
 	}

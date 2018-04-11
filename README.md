@@ -70,4 +70,4 @@ duration | The number of milliseconds the animation should last | `1000`
 easing | An easing function for the animation | `function(time){ return time }`
 onStart | A function that will be called every time the animation starts | n/a
 onEnd | A function that will be called every time the animation ends | n/a
-stop | Set to true to stop the animation | n/a
+animating | Set to `false` to stop the animation | n/a
