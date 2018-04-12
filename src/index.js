@@ -26,7 +26,7 @@ class ReactAnimate extends React.Component {
 		this.start(this.props)
 	}
 	componentWillUnmount(){
-		if (this.anim) {
+		if(this.anim){
 			this.anim.stop()
 		}
 	}

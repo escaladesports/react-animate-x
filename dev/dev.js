@@ -18,6 +18,7 @@ class Template extends React.Component{
 		}
 	}
 	componentDidMount(){
+		return
 		setTimeout(() => {
 			this.setState({
 				animating: false
@@ -26,7 +27,7 @@ class Template extends React.Component{
 	}
 	render(){
 		return (
-			<Animate {...this.state} easing={bounceOut}>
+			<Animate {...this.state} easing={bounceOut} loop>
 				{x => {
 					console.log(x)
 					return (
